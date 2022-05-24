@@ -31,6 +31,7 @@ html {
   font: "Noto Sans KR";
   font-size: var(--font-md);
   line-height: var(--line-height-normal);
+  letter-spacing: -0.0625em;
   overflow-y: scroll;
 }
 body {
