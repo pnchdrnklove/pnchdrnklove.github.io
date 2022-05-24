@@ -4,8 +4,10 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-export default function Template({ data }) {
-    const { frontmatter, html } = data.markdownRemark;
+export default function Template({ 
+    data, // this prop will be injected by the GraphQL query below.
+}) {
+    const { frontmatter, html } = data.markdownRemark
     return (
       <Layout>
         <Seo title="Home" />
@@ -25,13 +27,8 @@ export default function Template({ data }) {
 }
 
 export const pageQuery = graphql`
-  query blogPostBySlug($path: String) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    markdownRemark(frontmatter: { path: { eq: $path }}) {
+  query($path: String!) {
+    markdownRemark(frontmatter: {path: { eq: $path }}) {
       html
       frontmatter {
         date(formatString: "YYYY-MM-DD")
