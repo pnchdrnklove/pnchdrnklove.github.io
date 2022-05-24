@@ -15,8 +15,7 @@ const Header = ({ siteTitle }) => (
     <Link
       to="/"
       style={{
-        fontSize: `var(--font-sm)`,
-        textDecoration: `none`,
+        fontSize: `var(--font-lg)`,
       }}
     >
       {siteTitle}

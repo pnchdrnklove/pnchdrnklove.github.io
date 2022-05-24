@@ -10,8 +10,8 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "./layout.css"
 import "bootstrap/dist/css/bootstrap.css";
+import "./layout.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
   return (
     <>
     <div class="container">
-      <nav class="navbar fixed-top d-flex justify-content-center" style={{ backgroundColor: `var(--bs-orange)` }}>
+      <nav class="navbar fixed-top d-flex justify-content-center" style={{ backgroundColor: `#ffffff` }}>
         <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <div class="container">
             <ul class="nav nav-pills">

@@ -1,7 +1,7 @@
 :root {
   --border-radius: 4px;
   --color-text: #333;
-  --color-primary: #7026b9;
+  --color-primary: #ff9933;
   --color-code-bg: #fff4db;
   --color-code: #8a6534;
   --font-sans: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
@@ -24,6 +24,9 @@
   --size-content: 56rem;
   --size-gutter: var(--space-5);
   --size-gap: var(--space-6);
+    
+  --post-item-hover-color: var(--color-primary);
+  --post-item-description-color: #5e5e5f;
 }
 html {
   -webkit-text-size-adjust: 100%;
@@ -46,12 +49,10 @@ body {
 }
 a {
   background-color: transparent;
-  color: var(--color-primary);
-  text-decoration: none;
+  color: #000000;
   font-weight: 500;
-  text-decoration: underline;
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 2px;
+  text-decoration: none;
+  transition: 0.3s;
 }
 a:active,
 a:hover {
@@ -75,6 +76,7 @@ h1 {
   margin: 0;
   margin-bottom: 3rem;
   padding: 0;
+  font-size: 1.8em;
   line-height: var(--line-height-dense);
   letter-spacing: -0.01em;
 }
@@ -222,4 +224,15 @@ pre code:after,
 pre tt:before,
 pre tt:after {
   content: none;
+}
+
+#post-item {
+    margin-bottom: 10px;
+}
+#post-item .post-item-excerpt,
+#post-item .post-item-date {
+    color: var(--post-item-description-color);
+}
+#post-item a:hover {
+    color: var(--post-item-hover-color);
 }
