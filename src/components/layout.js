@@ -30,7 +30,8 @@ const Layout = ({ children }) => {
   const query = new URLSearchParams(search).get('s')
   const [searchQuery, setSearchQuery] = React.useState(query || '');
   
-  window.onload = function() {
+  let onload = typeof window !== 'undefined' && window.onload
+  onload = function() {
     document.getElementByID("header-search").innerHTML = "";
   }
 
