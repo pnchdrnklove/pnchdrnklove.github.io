@@ -1,6 +1,5 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -8,7 +7,7 @@ import PostLink from "../components/post-list"
 import * as styles from "../components/index.module.css"
 
 
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
+// const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
 const IndexPage = ({
     data: {
@@ -18,7 +17,6 @@ const IndexPage = ({
     const Posts = edges
         .filter(edge => !!edge.node.frontmatter.date) // you can filter your posts based on some criteria
         .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
-    
     
     return <Layout>
             <Seo title="Home" />
@@ -30,7 +28,6 @@ const IndexPage = ({
             <div>{ Posts }</div>
         </Layout>
 }
-
 
 //       <p className={styles.intro}>
 //         <b>Example pages:</b>{" "}
