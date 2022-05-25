@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
     }
   `)
 
-  const { search } = window.location;
+  const { search } = typeof window !== 'undefined' && window.location;
   const query = new URLSearchParams(search).get('s')
   const [searchQuery, setSearchQuery] = React.useState(query || '');
   
