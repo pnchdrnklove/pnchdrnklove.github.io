@@ -23,43 +23,33 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
+  
   return (
     <>
-    <div class="container">
-      <nav class="navbar fixed-top d-flex justify-content-center" style={{ backgroundColor: `#ffffff` }}>
-        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-        <div class="container">
-            <ul class="nav nav-pills">
-                <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Messages</a></li>
+    <header>
+        <nav class="navbar fixed-top d-flex justify-content-center" style={{ backgroundColor: `#ffffff` }}>
+          <div class="container" style={{ backgroundColor: `#333` }}>
+            <ul class="nav">
+              <li style={{ backgroundColor: `#ffffff` }} class="header-item">
+                <Header siteTitle={data.site.siteMetadata?.title + ` / ` || `Title`} />
+              </li>
             </ul>
-        </div>
-      </nav>
-    </div>
-    <div
+          </div>
+        </nav>
+    </header>
+    <main>
+      {children}
+    </main>
+    <footer
       style={{
-        margin: `0 auto`,
-        maxWidth: `var(--size-content)`,
-        padding: `var(--size-gutter)`,
-        paddingTop: `142px`,
+        marginTop: `var(--space-5)`,
+        fontSize: `var(--font-sm)`,
       }}
     >
-          
-        <main>{children}</main>
-        <footer
-            style={{
-                marginTop: `var(--space-5)`,
-                fontSize: `var(--font-sm)`,
-            }}
-        >
-            © {new Date().getFullYear()} &middot; Built with
-            {` `}
-            <a href="https://www.gatsbyjs.com" style={{textDecoration: `none`,}}>Gatsby</a>
-        </footer>
-    </div>
-    
+      © {new Date().getFullYear()} &middot; Built with
+      {` `}
+      <a href="https://www.gatsbyjs.com" style={{textDecoration: `none`,}}>Gatsby</a>
+    </footer>
     </>
   )
 }
