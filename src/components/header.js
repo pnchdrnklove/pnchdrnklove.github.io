@@ -3,11 +3,9 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 const Header = ({ siteTitle }) => (
-  <div>
-    <Link to="/" id="header-title">
-      {siteTitle}
-    </Link>
-  </div>
+  <Link to="/" id="header-title" class="nav-link">
+    {siteTitle}
+  </Link>
 )
 
 Header.propTypes = {

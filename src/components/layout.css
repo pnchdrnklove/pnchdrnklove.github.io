@@ -51,7 +51,7 @@ main {
   margin: 0 auto;
   max-width: var(--size-content);
   padding-bottom: var(--size-gutter);
-  padding-top: 142px;
+  padding-top: calc(var(--size-gutter)*4);
 }
 a {
   background-color: transparent;
@@ -232,12 +232,11 @@ pre tt:before,
 pre tt:after {
   content: none;
 }
-.header-item {
-  margin: 0 auto;
-  padding: var(--space-4) calc(var(--size-gutter)/2);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.mynavbar {
+  max-width: var(--size-content);
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
+  background-color: #ffffff;
 }
 #header-title {
   font-size: var(--font-lg);
@@ -257,4 +256,8 @@ pre tt:after {
 }
 .p-45 {
   padding: 2rem;
+}
+.myfooter {
+  max-width: var(--size-content);
+  font-size: var(--font-sm);
 }
