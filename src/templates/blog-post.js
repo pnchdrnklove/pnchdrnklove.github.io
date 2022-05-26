@@ -9,22 +9,23 @@ export default function Template({
 }) {
     const { frontmatter, html } = data.markdownRemark
     return (
-      <Layout>
-        <Seo title="Home" />
-        <div class="blog-post-container">
-            <div class="blog-post">
-                <h1>{frontmatter.title}</h1>
-                <date>{frontmatter.date}</date>
-                <div
-                    class="blog-post-content"
-                    dangerouslySetInnerHTML={{ __html: html }}
-                />
+      <Layout contents={
+        <>
+        <Seo title="Home" /><div class="blog-post-container">
+          <div class="blog-post">
+            <h1>{frontmatter.title}</h1>
+            <date>{frontmatter.date}</date>
+            <div
+              class="blog-post-content"
+              dangerouslySetInnerHTML={{ __html: html }} />
             </div>
-        </div>
+          </div>
+        </>
+      }>
       </Layout>
-        
+
     );
-}
+  };
 
 export const pageQuery = graphql`
   query($path: String!) {

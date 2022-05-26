@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react"
 
 const SearchBar = ({ searchQuery, setSearchQuery }) => (
-    <form 
+    <form
         action="/"
         method="get"
         autoComplete="off"
     >
-
+        
         <div className="post-search">
-            <input 
+            <input
                 value={searchQuery}
                 onInput={(e) => setSearchQuery(e.target.value)}
                 type="search"
@@ -17,7 +17,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => (
                 name="s"
                 spellCheck="false"
             />
-        </div>  
+        </div>
     </form>
 )
 

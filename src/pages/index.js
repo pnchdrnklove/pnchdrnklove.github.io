@@ -1,9 +1,13 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import { useFlexSearch } from "react-use-flexsearch"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+
 import PostLink from "../components/post-list"
+import SearchBar from "../components/search"
+
 import * as styles from "../components/index.module.css"
 
 
@@ -11,55 +15,70 @@ import * as styles from "../components/index.module.css"
 
 const IndexPage = ({
     data: {
-        allMarkdownRemark: { edges },
+        allMarkdownRemark: { nodes },
+        localSearchPages: { index, store },
     },
 }) => {
-    const Posts = edges
-        .filter(edge => !!edge.node.frontmatter.date) // you can filter your posts based on some criteria
-        .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
-    
-    return <Layout>
+    const { search } = typeof window !== 'undefined' && window.location;
+    const getSearch = new URLSearchParams(search).get('s');
+    const [searchQuery, setSearchQuery] = React.useState(getSearch || '');
+
+    // const posts = nodes
+    //     .filter(node => !!node.frontmatter.date) // you can filter your posts based on some criteria
+    //     .map(node => <PostLink key={node.id} post={node} />)
+
+    const results = useFlexSearch(searchQuery, index, store);
+    const posts = searchQuery ? unFlattenResults(results) : nodes;
+
+    console.log(posts)
+
+    let onload = typeof window !== 'undefined' && window.onload;
+    onload = function () {
+        document.getElementByID("header-search").innerHTML = "";
+    };
+        
+    return <Layout searchbar={
+                <SearchBar
+                    searchQuery={searchQuery}
+                    setSearchQuery={setSearchQuery}>
+                </SearchBar>}
+                contents={ posts.map(post => (
+                    <PostLink key={post.id} post={post} />
+                ))}
+            >
             <Seo title="Home" />
             <div className={ styles.textCenter }>
                 <h1>
                   Welcome to <b>Gatsby!</b>
                 </h1>
             </div>
-            <div>{ Posts }</div>
+            
         </Layout>
-}
-
-//       <p className={styles.intro}>
-//         <b>Example pages:</b>{" "}
-//         {samplePageLinks.map((link, i) => (
-//           <React.Fragment key={link.url}>
-//             <Link to={link.url}>{link.text}</Link>
-//             {i !== samplePageLinks.length - 1 && <> · </>}
-//           </React.Fragment>
-//         ))}
-//         <br />
-//         Edit <code>src/pages/index.js</code> to update this page.
-//       </p>
-//     </div>
-//   </Layout>
-// }
-
+};
 export default IndexPage
 
 export const pageQuery = graphql`
     query {
         allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date]}) {
-            edges {
-                node {
-                    id
-                    excerpt(truncate: true, pruneLength: 100)
-                    frontmatter {
-                        date(formatString: "YYYY-MM-DD")
-                        path
-                        title
-                    }
+            nodes {
+                id
+                excerpt(truncate: true, pruneLength: 100)
+                frontmatter {
+                    date(formatString: "YYYY-MM-DD")
+                    path
+                    title
                 }
             }
         }
+        localSearchPages {
+            index
+            store
+        }
     }
 `
+
+export const unFlattenResults = results =>
+    results.map(post => {
+        const { date, path, excerpt, title } = post;
+        return { frontmatter: { title, date, path, excerpt }};
+    });

@@ -8,9 +8,9 @@ const PostLink = ({ post }) => (
     <div id="post-list" className="bg-light p-45 rounded-3">
         <Link to={ post.frontmatter.path }>
             <div>
-                <date className="post-list-excerpt post-list-date">
+                <span className="post-list-excerpt post-list-date">
                     {post.frontmatter.date }
-                </date>
+                </span>
                 <h3 className="post-list-title">
                     { post.frontmatter.title }
                 </h3>

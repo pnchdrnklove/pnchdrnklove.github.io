@@ -50,6 +50,40 @@ module.exports = {
         display: `swap`,
       }
     },
+    {
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+        name: 'pages',
+        engine: 'flexsearch',
+        engineOptions: 'speed',
+        query: `
+          {
+            allMarkdownRemark(sort: { fields: [ frontmatter___date], order: DESC }) {
+              nodes {
+                excerpt
+                frontmatter {
+                  path
+                  date(formatString: "YYYY-MM-DD")
+                  title
+                }
+              }
+            }
+          }
+        `,
+
+        ref: 'path',
+        index: ['title', 'body'],
+        store: ['title', 'excerpt', 'date', 'path'],
+        normalizer: ({data}) =>
+          data.allMarkdownRemark.nodes.map((node) => ({
+            path: node.frontmatter.path,
+            title: node.frontmatter.title,
+            date: node.frontmatter.date,
+            excerpt: node.excerpt,
+            body: node.rawMarkdownBody,
+          })),
+        }
+      },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
