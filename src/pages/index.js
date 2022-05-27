@@ -28,8 +28,13 @@ const IndexPage = ({
     //     .map(node => <PostLink key={node.id} post={node} />)
 
     const results = useFlexSearch(searchQuery, index, store);
+    const unFlattenResults = results =>
+        results.map(post => {
+            const { date, path, excerpt, title, rawMarkdownBody } = post;
+            return { excerpt, rawMarkdownBody, frontmatter: { title, date, path }};
+        });
+    
     const posts = searchQuery ? unFlattenResults(results) : nodes;
-
     console.log(posts)
 
     let onload = typeof window !== 'undefined' && window.onload;
@@ -43,7 +48,7 @@ const IndexPage = ({
                     setSearchQuery={setSearchQuery}>
                 </SearchBar>}
                 contents={ posts.map(post => (
-                    <PostLink key={post.id} post={post} />
+                    <PostLink key={post.frontmatter.path} post={post} />
                 ))}
             >
             <Seo title="Home" />
@@ -68,6 +73,7 @@ export const pageQuery = graphql`
                     path
                     title
                 }
+                rawMarkdownBody
             }
         }
         localSearchPages {
@@ -76,9 +82,3 @@ export const pageQuery = graphql`
         }
     }
 `
-
-export const unFlattenResults = results =>
-    results.map(post => {
-        const { date, path, excerpt, title } = post;
-        return { frontmatter: { title, date, path, excerpt }};
-    });

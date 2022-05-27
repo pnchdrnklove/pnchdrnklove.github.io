@@ -66,6 +66,7 @@ module.exports = {
                   date(formatString: "YYYY-MM-DD")
                   title
                 }
+                rawMarkdownBody
               }
             }
           }

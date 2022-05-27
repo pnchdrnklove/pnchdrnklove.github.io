@@ -47,7 +47,6 @@ const Layout = ({ contents, searchbar }) => {
 
 Layout.propTypes = {
   contents: PropTypes.node,
-  searchbar: PropTypes.node,
 }
 
 export default Layout

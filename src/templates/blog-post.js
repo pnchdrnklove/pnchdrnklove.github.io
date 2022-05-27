@@ -12,11 +12,11 @@ export default function Template({
       <Layout contents={
         <>
         <Seo title="Home" /><div class="blog-post-container">
-          <div class="blog-post">
+          <div className="blog-post">
             <h1>{frontmatter.title}</h1>
-            <date>{frontmatter.date}</date>
+            <span>{frontmatter.date}</span>
             <div
-              class="blog-post-content"
+              className="blog-post-content"
               dangerouslySetInnerHTML={{ __html: html }} />
             </div>
           </div>

@@ -1,11 +1,11 @@
 import React from "react"
 
 const SearchBar = ({ searchQuery, setSearchQuery }) => (
-    <form
-        action="/"
-        method="get"
-        autoComplete="off"
-    >
+    // <form
+    //     action="/"
+    //     method="get"
+    //     autoComplete="off"
+    // >
         
         <div className="post-search">
             <input
@@ -18,7 +18,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => (
                 spellCheck="false"
             />
         </div>
-    </form>
+    // </form>
 )
 
 export default SearchBar
