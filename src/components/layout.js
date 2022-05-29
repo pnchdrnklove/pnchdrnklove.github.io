@@ -26,7 +26,6 @@ const Layout = ({ contents, searchbar }) => {
     }
   `
   )
-  
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title + ' / ' || `Title`}
@@ -48,8 +47,6 @@ const Layout = ({ contents, searchbar }) => {
 
 Layout.propTypes = {
   contents: PropTypes.node,
-  searchbar: PropTypes.node,
-
 }
 
 export default Layout

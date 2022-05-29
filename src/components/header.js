@@ -1,7 +1,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import Search from "../components/search"
+import Search from "./search"
 
 const Header = ({ siteTitle, searchbar }) => (
   <header>
@@ -9,14 +9,14 @@ const Header = ({ siteTitle, searchbar }) => (
       <Link to="/" id="header-title">
         {siteTitle}
       </Link>
-      <Search></Search>
+      <Search searchbar={searchbar}></Search>
     </nav>
   </header>
 )
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-  searchbar: PropTypes.node.isRequired,
+  searchbar: PropTypes.node,
 }
 
 Header.defaultProps = {
