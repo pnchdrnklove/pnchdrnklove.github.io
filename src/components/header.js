@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useRef } from 'react'
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
@@ -6,12 +7,12 @@ import Navigation from "./navigation"
 import Search from "./search"
 
 const removeSearchValue = () => {
-    if (document.getElementById('header-search')) {
-        console.log(document.getElementById('header-search').value)
-
-        document.getElementById('header-search').value = '';
+    if (typeof document !== 'undefined') {
+        const documentRef = useRef(document);
+        if (document.getElementById('header-search')) {
+            document.getElementById('header-search').value = '';
+        }
     }
-    console.log(document.getElementById('header-search'))
 }
 const Header = ({ siteTitle, searchbar }) => (
   <header>
