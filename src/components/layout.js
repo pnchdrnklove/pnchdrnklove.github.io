@@ -27,7 +27,7 @@ const Layout = ({ contents, searchbar }) => {
   )
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title + ' / ' || `Title`}
+      <Header siteTitle={data.site.siteMetadata?.title}
           searchbar={searchbar}/>
       <main>
         {contents}

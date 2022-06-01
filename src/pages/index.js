@@ -22,8 +22,10 @@ const IndexPage = ({
     const posts = query ? nodes
         .filter(post => {
             const {excerpt} = post;
+            const {title} = post.frontmatter;
             return (
-                excerpt.includes(query)
+                excerpt.includes(query) ||
+                title.includes(query)
             )
         }) : nodes;
 

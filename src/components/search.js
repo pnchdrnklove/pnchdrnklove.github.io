@@ -14,7 +14,6 @@ const Search = ({ searchbar }) => {
         placeholder="Search blog posts"
         name="s"
         spellCheck="false"
-        
       />
     </div>
     </>

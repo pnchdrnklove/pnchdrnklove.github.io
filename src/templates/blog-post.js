@@ -15,8 +15,8 @@ export default function Template({
         <Seo title="Home" />
         <div className="blog-post-container">
           <div className="blog-post">
-            <h1>{frontmatter.title}</h1>
             <span>{frontmatter.date}</span>
+            <h1>{frontmatter.title}</h1>
             <div
               className="blog-post-content"
               dangerouslySetInnerHTML={{ __html: html }} />
