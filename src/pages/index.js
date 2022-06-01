@@ -1,4 +1,6 @@
-import React, {useState} from "react"
+import * as React from "react"
+import {useState} from "react"
+
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
