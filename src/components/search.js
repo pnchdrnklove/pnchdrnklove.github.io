@@ -1,7 +1,7 @@
 import React from "react"
 
 const Search = ({ searchbar }) => {
-  const useSearch = searchbar.useSearch;
+  const useSearch = searchbar? searchbar.useSearch : false;
   const query = useSearch ? searchbar.query : '';
   const setQuery = searchbar.setQuery;
   return <>
