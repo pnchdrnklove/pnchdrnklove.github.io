@@ -8,6 +8,7 @@ import Seo from "../components/seo"
 import PostLink from "../components/post-list"
 
 import * as styles from "../components/index.module.css"
+import profile from "../images/profile.PNG"
 
 // const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 const IndexPage = ({
@@ -24,23 +25,27 @@ const IndexPage = ({
             const {excerpt} = post;
             const {title} = post.frontmatter;
             return (
-                excerpt.includes(query) ||
-                title.includes(query)
+                excerpt.includes(query) || title.includes(query)
             )
         }) : nodes;
 
     return <>
         <Layout searchbar={{ useSearch, setUseSearch, query, setQuery }}
-            contents={ posts.map(post => (
+                about={
+                    <><Seo title="Home" />
+                    <div className="about-wrapper" style={{backgroundColor: "#999"}}>
+                        <h1>Welcome to <b>Gatsby!</b></h1>
+                        <div className="image-wrap">
+                            <img src={profile} alt=""/>
+                        </div>
+                    </div>
+                    </>
+                }
+                contents={posts.map(post => 
                 <PostLink key={post.frontmatter.path} post={post} />
-            ))}
-        >
-            <Seo title="Home" />
-            <div className={ styles.textCenter }>
-                <h1>
-                    Welcome to <b>Gatsby!</b>
-                </h1>
-            </div>        
+                )}
+
+            >
         </Layout>
     </>
 };

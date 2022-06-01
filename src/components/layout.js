@@ -14,7 +14,7 @@ import Header from "./header"
 import "bootstrap/dist/css/bootstrap.css"
 import "./layout.css"
 
-const Layout = ({ contents, searchbar }) => {
+const Layout = ({ about, contents, searchbar }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -30,6 +30,7 @@ const Layout = ({ contents, searchbar }) => {
       <Header siteTitle={data.site.siteMetadata?.title}
           searchbar={searchbar}/>
       <main>
+        {about}
         {contents}
       </main>
       <div className="container myfooter">
@@ -46,6 +47,7 @@ const Layout = ({ contents, searchbar }) => {
 
 Layout.propTypes = {
   contents: PropTypes.node,
+  about: PropTypes.node,
 }
 
 export default Layout

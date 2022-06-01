@@ -7,7 +7,8 @@ import Seo from "../components/seo"
 export default function Template({ 
     data, // this prop will be injected by the GraphQL query below.
 }) {
-    const { frontmatter, html } = data.markdownRemark
+    const { frontmatter, html } = data.markdownRemark;
+    console.log(data.markdownRemark);
     const [useSearch, setUseSearch] = useState(false);
     return (
       <Layout contents={

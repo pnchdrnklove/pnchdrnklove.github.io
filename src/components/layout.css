@@ -234,15 +234,14 @@ main {
   margin: 0 auto;
   max-width: var(--size-content);
   padding-bottom: var(--size-gutter);
-  padding-top: calc(var(--size-gutter)*4);
+  padding-top: calc(var(--size-gutter)*3);
 }
 /*  */
 
 /* header, navigation, search */
 nav.mynavbar {
   max-width: var(--size-content);
-  padding-top: var(--space-3);
-  padding-bottom: var(--space-3);
+  padding: var(--space-3) 0;
   background-color: #ffffff;
   justify-content: flex-start;
   font-size: var(--font-lg);
