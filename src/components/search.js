@@ -12,7 +12,6 @@ const Search = ({ searchbar }) => {
         type="search"
         id="header-search"
         placeholder="Search blog posts"
-        name="s"
         spellCheck="false"
       />
     </div>
