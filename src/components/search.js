@@ -3,7 +3,7 @@ import React from "react"
 const Search = ({ searchbar }) => {
   const useSearch = searchbar? searchbar.useSearch : false;
   const query = useSearch ? searchbar.query : '';
-  const setQuery = searchbar.setQuery;
+  const setQuery = useSearch ? searchbar.setQuery : '';
   return <>
     <div className="post-search" style={{display: useSearch ? 'inline' : 'none'}}>
       <input
