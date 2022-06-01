@@ -1,60 +1,44 @@
-import * as React from "react"
+import React, {useState} from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
 import PostLink from "../components/post-list"
 
 import * as styles from "../components/index.module.css"
 
-
 // const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
-
 const IndexPage = ({
     data: {
-        allMarkdownRemark,
+        allMarkdownRemark: {
+            nodes
+        }
     },
 }) => {
-    // const { search } = typeof window !== 'undefined' && window.location;
-    // const getSearch = new URLSearchParams(search).get('s');
-    // const searchQuery = React.useState(getSearch || '');
+    const [query, setQuery] = useState('');
+    const [useSearch, setUseSearch] = useState(true);
+    const posts = query ? nodes
+        .filter(post => {
+            const {excerpt} = post;
+            return (
+                excerpt.includes(query)
+            )
+        }) : nodes;
 
-    const posts = allMarkdownRemark.nodes;
-    const data_for_search = allMarkdownRemark.nodes;
-
-    // const posts = nodes
-    //     .filter(node => !!node.frontmatter.date) // you can filter your posts based on some criteria
-    //     .map(node => <PostLink key={node.id} post={node} />)
-
-    
-//     const results = useFlexSearch(searchQuery, index, store);
-//     const unFlattenResults = results =>
-//         results.map(post => {
-//             const { date, path, excerpt, title, rawMarkdownBody } = post;
-//             console.log(post);
-//             return { excerpt, rawMarkdownBody, frontmatter: { title, date, path }};
-//         });
-    
-//     const posts = searchQuery ? unFlattenResults(results) : nodes;
-
-//     let onload = typeof window !== 'undefined' && window.onload;
-//     onload = function () {
-//         document.getElementByID("header-search").innerHTML = "";
-//     };
-    return <Layout searchbar={{ data_for_search }}
-               contents={ posts.map(post => (
+    return <>
+        <Layout searchbar={{ useSearch, setUseSearch, query, setQuery }}
+            contents={ posts.map(post => (
                 <PostLink key={post.frontmatter.path} post={post} />
-                ))}
-            >
+            ))}
+        >
             <Seo title="Home" />
             <div className={ styles.textCenter }>
                 <h1>
-                  Welcome to <b>Gatsby!</b>
+                    Welcome to <b>Gatsby!</b>
                 </h1>
-            </div>
-            
+            </div>        
         </Layout>
+    </>
 };
 export default IndexPage
 

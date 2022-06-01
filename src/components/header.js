@@ -15,13 +15,11 @@ const Header = ({ siteTitle, searchbar }) => (
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-  searchbar: PropTypes.node,
+  siteTitle: PropTypes.string,  
 }
 
 Header.defaultProps = {
   siteTitle: ``,
-  searchbar: ``,
 }
 
 export default Header

@@ -14,7 +14,6 @@ import Header from "./header"
 import "bootstrap/dist/css/bootstrap.css"
 import "./layout.css"
 
-
 const Layout = ({ contents, searchbar }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {

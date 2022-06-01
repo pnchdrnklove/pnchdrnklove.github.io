@@ -1,7 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-
-// import { StaticImage } from "gatsby-plugin-image"
 import logo from "../images/example.png"
 
 const PostLink = ({ post }) => (
@@ -20,16 +18,7 @@ const PostLink = ({ post }) => (
             </div>
             <div className="image-wrap">
                 <img src={logo} alt=""/>
-            </div>            
-            {/* <StaticImage
-                src="../images/example.png"
-                loading="eager"
-                width={64}
-                quality={95}
-                formats={["auto", "webp", "avif"]}
-                alt=""
-                style={{ marginBottom: `var(--space-3)` }}
-            /> */}
+            </div>
         </Link>
     </div>
 )
