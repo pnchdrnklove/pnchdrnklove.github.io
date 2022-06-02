@@ -32,7 +32,7 @@ html {
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
   font: "Noto Sans KR";
-  font-size: var(--font-md);
+  font-size: 1.125rem;
   line-height: var(--line-height-normal);
   letter-spacing: -0.0625em;
   overflow-y: scroll;
@@ -242,8 +242,9 @@ main {
 nav.mynavbar {
   max-width: var(--size-content);
   padding: var(--space-3) 0;
-  background-color: #ffffff;
   justify-content: flex-start;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(2px);
   font-size: var(--font-lg);
   font-weight: 400;
   letter-spacing: -0.0625em;
@@ -261,7 +262,8 @@ nav.mynavbar {
   padding: 0;
   border: none;
   outline: none;
-  letter-spacing: -0.0625em;  
+  background-color: transparent;
+  letter-spacing: -0.0625em;
   color: var(--color-text);
   transition: 0.3s;
 }
@@ -278,6 +280,29 @@ nav.mynavbar {
 }
 /*  */
 
+/* about */
+.about-wrapper {
+  margin-bottom: calc(var(--space-4) - 1px);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.profile-image {
+  border-radius: 50%;
+  box-shadow: 0 0 16px rgb(221, 221, 221);
+}
+.profile-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: var(--post-item-excerpt-color);
+  -webkit-font-smoothing: antialiased;
+  transition: 0.3s;
+}
+.profile-icon:hover {
+  fill: var(--color-primary);
+}
+/* */
+
 /* post list */
 #post-list {
   margin-bottom: 10px;
@@ -286,24 +311,29 @@ nav.mynavbar {
   display: flex;
   justify-content: space-between;
 }
+#post-list .post-list-wrapper {
+  max-width: 420px;
+}
 #post-list .image-wrap {
   display: flex;
   align-items: center;
 }
-#post-list img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  margin-bottom: 0;
+#post-list .post-list-img {
+  /* object-fit: scale-down; */
+  /* margin-bottom: 0; */
+}
+#post-list .post-list-title {
+  font-size: 24px;
 }
 #post-list .post-list-excerpt {
   max-width: 400px;
   margin-bottom: var(--space-3);
   font-weight: 300;
+  font-size: 16px;
   color: var(--post-item-excerpt-color);
 }
 #post-list .post-list-date {
-  font-size: var(--font-sm);
+  font-size: 16px;
 }
 .p-45 {
   padding: 2rem;
