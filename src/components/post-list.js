@@ -1,11 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
-import logo from "../images/example.png"
+import { StaticImage } from "gatsby-plugin-image"
 
 const PostLink = ({ post }) => (
     <div id="post-list" className="bg-light p-45 rounded-3">
         <Link to={ post.frontmatter.path }>
-            <div>
+            <div className="post-list-wrapper">
                 <span className="post-list-excerpt post-list-date">
                     {post.frontmatter.date }
                 </span>
@@ -17,7 +17,12 @@ const PostLink = ({ post }) => (
                 </p>
             </div>
             <div className="image-wrap">
-                <img src={logo} alt=""/>
+                <StaticImage className="post-list-img" 
+                    src={"../images/example.png"}
+                    placeholder="blurred"
+                    width={80}
+                    height={80}
+                    objectFit="contain" />
             </div>
         </Link>
     </div>
