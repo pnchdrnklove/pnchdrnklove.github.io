@@ -8,12 +8,11 @@ export default function Template({
     data, // this prop will be injected by the GraphQL query below.
 }) {
     const { frontmatter, html } = data.markdownRemark;
-    console.log(data.markdownRemark);
     const [useSearch, setUseSearch] = useState(false);
     return (
       <Layout contents={
         <>
-        <Seo title="Home" />
+        <Seo title={frontmatter.title} />
         <div className="blog-post-container">
           <div className="blog-post">
             <span>{frontmatter.date}</span>
