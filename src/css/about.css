@@ -1,0 +1,22 @@
+  /* about */
+  .about-wrapper {
+    margin-bottom: calc(var(--space-4) - 1px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .profile-image {
+    border-radius: 50%;
+    box-shadow: 0 0 16px rgb(221, 221, 221);
+  }
+  .profile-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: var(--post-item-excerpt-color);
+    -webkit-font-smoothing: antialiased;
+    transition: 0.3s;
+  }
+  .profile-icon:hover {
+    fill: var(--color-primary);
+  }
+  /* */

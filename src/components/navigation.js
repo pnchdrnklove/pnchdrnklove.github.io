@@ -12,7 +12,7 @@ const Navigation = () => {
         }
     }
     return <>
-        <div className="path-navi">{result}</div>
+        <div>{result}</div>
     </>
 }
 

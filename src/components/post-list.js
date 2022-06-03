@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import "../css/post-list.css"
 
 const PostLink = ({ post }) => (
     <div id="post-list" className="bg-light p-45 rounded-3">

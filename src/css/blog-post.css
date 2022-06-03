@@ -1,0 +1,5 @@
+/* blog post */
+.blog-post > span {
+    color: var(--post-item-excerpt-color)
+}
+/* */

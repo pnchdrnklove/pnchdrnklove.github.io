@@ -5,6 +5,8 @@ import PropTypes from "prop-types"
 import Navigation from "./navigation"
 import Search from "./search"
 
+import "../css/header.css"
+
 const Header = ({ siteTitle, searchbar }) => {
     const removeSearchValue = (e) => {
         e.nativeEvent.stopImmediatePropagation();

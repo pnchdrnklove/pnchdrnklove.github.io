@@ -8,7 +8,8 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PostLink from "../components/post-list"
 
-import * as styles from "../components/index.module.css"
+import * as styles from "../css/index.module.css"
+import "../css/about.css"
 
 
 // const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
