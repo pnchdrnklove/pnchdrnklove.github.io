@@ -19,11 +19,10 @@ const PostLink = ({ post }) => (
             </div>
             <div className="image-wrap">
                 <StaticImage className="post-list-img" 
-                    src={"../images/example.png"}
+                    src={"../images/profile.png"}
                     placeholder="blurred"
                     width={80}
-                    height={80}
-                    objectFit="contain" />
+                    />
             </div>
         </Link>
     </div>
