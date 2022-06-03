@@ -20,6 +20,8 @@ const IndexPage = ({
 }) => {
     const [query, setQuery] = useState('');
     const [useSearch, setUseSearch] = useState(true);
+    const [viewPost, setViewPost] = useState('all');
+
     const posts = query ? nodes
         .filter(post => {
             const {title} = post.frontmatter;
@@ -45,8 +47,10 @@ export const pageQuery = graphql`
                 id
                 excerpt(truncate: true, pruneLength: 100)
                 frontmatter {
+                    category
                     date(formatString: "YYYY-MM-DD")
                     path
+                    tags
                     title
                 }
                 rawMarkdownBody
