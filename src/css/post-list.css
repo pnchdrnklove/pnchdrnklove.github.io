@@ -14,8 +14,7 @@
     align-items: center;
 }
 #post-list .post-list-img {
-/* object-fit: scale-down; */
-/* margin-bottom: 0; */
+    /* object-fit: contain; */
 }
 #post-list .post-list-title {
     font-size: 24px;
