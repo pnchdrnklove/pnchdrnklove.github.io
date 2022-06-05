@@ -8,11 +8,15 @@ const Navigation = () => {
     const result = [];
     for (let i = 1; i < splittedPath.length; i++) {
         if (splittedPath[i]) {
-            result.push(<><Link>{splittedPath[i]}</Link><span className="seperator">/</span></>);
+            if (i === splittedPath.length - 1) {
+                result.push(<><Link className="navi-post-title">{splittedPath[i]}</Link><span className="seperator">/</span></>);
+            } else {
+                result.push(<><Link>{splittedPath[i]}</Link><span className="seperator">/</span></>);
+            }        
         }
     }
     return <>
-        <div>{result}</div>
+        <div className="navigation">{result}</div>
     </>
 }
 

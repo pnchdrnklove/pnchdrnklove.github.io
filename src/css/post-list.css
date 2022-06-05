@@ -1,35 +1,75 @@
 /* post list */
 #post-list {
     margin-bottom: 10px;
-}
-#post-list a {
-    display: flex;
-    justify-content: space-between;
+    border-radius: 1rem;
+    border: 1px solid var(--color-border);
 }
 #post-list .post-list-wrapper {
-    max-width: 420px;
-}
-#post-list .image-wrap {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
 }
-#post-list .post-list-img {
-    /* object-fit: contain; */
+#post-list .post-list-wrapper:hover .image-wrapper{
+    transform: scale(1.2);
+    overflow: hidden;
+}
+@media(min-width:600px) {
+    #post-list .post-list-wrapper {
+        flex-direction: row;
+    }
+}
+#post-list .image-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    background-color: #fff;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom: 1px solid var(--color-border);
+}
+@media(min-width:600px) {
+    #post-list .image-wrapper {
+        padding: 0 15px;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 1rem;
+        border-bottom: 0;
+        border-right: 1px solid var(--color-border);
+    }
+}
+#post-list .text-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    overflow: hidden;
+}
+@media(min-width:600px) {
+    #post-list .text-wrapper {
+        width: 80%;
+    }
 }
 #post-list .post-list-title {
-    font-size: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 18px;
 }
 #post-list .post-list-excerpt {
-    max-width: 400px;
-    margin-bottom: var(--space-3);
+    margin-bottom: 0.5em;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    
     font-weight: 300;
     font-size: 16px;
-    color: var(--post-item-excerpt-color);
+    /* color: var(--color-excerpt); */
 }
 #post-list .post-list-date {
-    font-size: 16px;
-}
-.p-45 {
-    padding: 2rem;
+    margin-bottom: 0.5em;
+    font-weight: 300;
+    font-size: 14px;
+    color: var(----color-excerpt);
 }
 /*  */

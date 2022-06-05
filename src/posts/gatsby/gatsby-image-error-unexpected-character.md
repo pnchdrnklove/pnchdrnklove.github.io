@@ -4,11 +4,9 @@ title: "이미지 첨부 시 'Module parse failed: Unexpected character' 에러 
 description: "gatsby-plugin-image 사용하기"
 template: "post"
 path: "/posts/gatsby/gatsby-image-error-unexpected-character"
-category: "gatsby"
-tags: 
- - "error log"
+category: 
  - "gatsby"
- - "blog"
+ - "TIL"
 ---
 
 ## 에러 로그

@@ -7,6 +7,7 @@ const About = () => {
         <div className="about-wrapper">
             <StaticImage className="profile-image"
                             src={"../images/profile.PNG"}
+                            alt=""
                             width={128}
                             height={128}
                             placeholder="blurred"/>
