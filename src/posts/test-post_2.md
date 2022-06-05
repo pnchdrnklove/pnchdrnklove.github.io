@@ -4,8 +4,7 @@ title: "테스트용 게시글입니다2."
 description: "게시글에 대한 설명입니다."
 template: "post"
 path: "/posts/test-post_2"
-category: 
- - "1"
+category: "1"
 ---
 
 ## 게시글

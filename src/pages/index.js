@@ -21,14 +21,13 @@ const IndexPage = ({
     const [query, setQuery] = useState('');
     const [useSearch, setUseSearch] = useState(true);
     const [viewPost, setViewPost] = useState('all');
-    const category = nodes[0].frontmatter.category
-    console.log(category)
     
     const posts = query ? nodes
         .filter(post => {
-            const {title} = post.frontmatter;
+            const {excerpt} = post;
+            const {title, category} = post.frontmatter;
             return (
-                title.includes(query)
+                [title, category, excerpt].map(item => item.match(new RegExp(query, "i")) !== null ? true : false).includes(true)
             )
         }) : nodes;
     const postProp = posts.map(post => <PostLink key={post.frontmatter.path} post={post} />)
@@ -47,7 +46,7 @@ export const pageQuery = graphql`
         allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date]}) {
             nodes {
                 id
-                excerpt(truncate: true, pruneLength: 300)
+                excerpt(truncate: true, pruneLength: 120)
                 frontmatter {
                     category
                     date(formatString: "YYYY-MM-DD")

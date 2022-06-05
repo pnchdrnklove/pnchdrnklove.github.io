@@ -6,6 +6,7 @@ const Navigation = () => {
           typeof window !== 'undefined' ? 
           window.location.pathname.split('/') : '';
     const result = [];
+    // console.log(splittedPath);
     for (let i = 1; i < splittedPath.length; i++) {
         if (splittedPath[i]) {
             if (i === splittedPath.length - 1) {

@@ -4,20 +4,20 @@ import { StaticImage } from "gatsby-plugin-image"
 import "../css/post-list.css"
 
 const PostLink = ({ post }) => (
-    <div id="post-list" className="bg-light">
+    <div id="post-list">
         <Link to={ post.frontmatter.path } className="post-list-wrapper">
             <div className="image-wrapper">
                 <StaticImage
                     src={"../images/gatsby-icon.png"}
                     alt={``}
-                    width="80"
+                    width={80}
                     placeholder="blurred"
                     objectFit="contain"
                     />
             </div>
             <div className="text-wrapper">
                 <span className="post-list-date">
-                    {post.frontmatter.category}
+                    { post.frontmatter.category }
                     { post.frontmatter.date }
                 </span>
                 <h3 className="post-list-title">
