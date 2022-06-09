@@ -3,21 +3,15 @@ import React from 'react'
 const Navigation = () => {
     const splittedPath = 
           typeof window !== 'undefined' ? 
-          window.location.pathname.split('/') : '';
-    const result = [];
-    for (let i = 1; i < splittedPath.length; i++) {
-        if (splittedPath[i]) {
-            if (i === splittedPath.length - 1) {
-                // result.push(<><Link className="navi-post-title">{splittedPath[i]}</Link><span className="seperator">/</span></>);
-                result.push(<><span className="navi-post-title" key={splittedPath[i]}>{splittedPath[i]}</span><span className="seperator">/</span></>);
-            } else {
-                // result.push(<><Link>{splittedPath[i]}</Link><span className="seperator">/</span></>);
-                result.push(<><span key={splittedPath[i]}>{splittedPath[i]}</span><span className="seperator">/</span></>);
-            }        
-        }
-    }
+          window.location.pathname.split('/').filter(Boolean) : '';
+    const pathLink = splittedPath.map((e, i) => {
+        return <React.Fragment key={'path-link-'+i}>
+            <span>{e}</span>
+            { i == splittedPath.length - 1 ? '' : <span className="seperator">/</span> }
+        </React.Fragment>
+    })
     return <>
-        <div className="navigation">{result}</div>
+        <div className="navigation">{pathLink}</div>
     </>
 }
 
