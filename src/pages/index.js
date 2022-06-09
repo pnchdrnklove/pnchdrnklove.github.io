@@ -22,15 +22,16 @@ const IndexPage = ({
     const [useSearch, setUseSearch] = useState(true);
     const [viewPost, setViewPost] = useState('all');
     
-    const posts = query ? nodes
-        .filter(post => {
-            const {excerpt} = post;
-            const {title, category} = post.frontmatter;
-            return (
-                [title, category, excerpt].map(item => item.match(new RegExp(query, "i")) !== null ? true : false).includes(true)
-            )
-        }) : nodes;
-    const postProp = posts.map(post => <PostLink key={post.frontmatter.path} post={post} />)
+    const posts = query ? nodes.filter(post => {
+        const {excerpt} = post;
+        const {title, category} = post.frontmatter;
+        return (
+            [title, category, excerpt].map(item => 
+                item.match(new RegExp(query, "i")) !== null ? true : false).includes(true)
+        )
+    }) : nodes;
+    const postProp = posts.map(post => 
+        <PostLink key={post.frontmatter.path} post={post} />)
 
     return <>
         <Layout searchbar={{ useSearch, setUseSearch, query, setQuery }}

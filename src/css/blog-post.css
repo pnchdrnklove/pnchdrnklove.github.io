@@ -2,4 +2,8 @@
 .blog-post > span {
     color: var(--color-excerpt)
 }
+.other-posts {
+    display: flex;
+    justify-content: space-between;
+}
 /* */

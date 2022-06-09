@@ -22,7 +22,7 @@ const Header = ({ siteTitle, searchbar }) => {
                 {siteTitle}
               </Link>
               <span className="seperator">/</span>
-              <Navigation></Navigation>
+              <Navigation/>
               <Search searchbar={searchbar}></Search>
             </nav>
         </header>

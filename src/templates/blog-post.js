@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -7,6 +7,7 @@ import "../css/blog-post.css"
 
 export default function Template({ 
     data, // this prop will be injected by the GraphQL query below.
+    pageContext,
 }) {
     const { frontmatter, html } = data.markdownRemark;
     const [useSearch, setUseSearch] = useState(false);
@@ -23,6 +24,8 @@ export default function Template({
               dangerouslySetInnerHTML={{ __html: html }} />
             </div>
           </div>
+          <div className="other-posts">
+          </div> 
         </>
       }
       searchbar={{useSearch, setUseSearch}}
