@@ -1,3 +1,4 @@
+const { create } = require("domain")
 const path = require("path")
 // Implement the Gatsby API “createPages”. This is called once the
 // data layer is bootstrapped to let plugins create pages from data.
@@ -7,7 +8,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       {
-        allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, limit: 1000) {
+        allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, limit: 2000) {
           edges {
             node {
               frontmatter {
@@ -15,6 +16,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 path
               }
             }
+          }
+          group(field: frontmatter___category) {
+            fieldValue
           }
         }
       }
@@ -27,6 +31,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
   // Create pages for each markdown file.
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
+  const categoryTemplate = path.resolve(`src/templates/category.js`)
+
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     const path = node.frontmatter.path
     createPage({
@@ -37,6 +43,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: {
         pagePath: path,
         category: node.frontmatter.category,
+      },
+    })
+  })
+  
+  result.data.allMarkdownRemark.group.forEach(category => {
+    createPage({
+      path: `/category/${category.fieldValue}/`,
+      component: categoryTemplate,
+      context: {
+        category: category.fieldValue,
       },
     })
   })
