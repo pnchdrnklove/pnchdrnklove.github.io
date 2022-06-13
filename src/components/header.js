@@ -7,7 +7,7 @@ import Search from "./search"
 
 import "../css/header.css"
 
-const Header = ({ siteTitle, searchbar }) => {
+const Header = ({ siteTitle, searchbar, postData }) => {
     const removeSearchValue = e => {
         e.nativeEvent.stopImmediatePropagation();
         if (searchbar.useSearch) { 
@@ -21,8 +21,8 @@ const Header = ({ siteTitle, searchbar }) => {
               <Link to="/" id="header-title" onClick={event => removeSearchValue(event)}>
                 {siteTitle}
               </Link>
-              <span className="seperator">/</span>
-              <Navigation/>
+              <span className="seperator">&gt;</span>
+              <Navigation postData={postData}/>
               <Search searchbar={searchbar}></Search>
             </nav>
         </header>

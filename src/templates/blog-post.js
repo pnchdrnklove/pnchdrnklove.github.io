@@ -11,15 +11,16 @@ export default function Template({
 }) {
     const { frontmatter, html } = data.markdownRemark;
     const [useSearch, setUseSearch] = useState(false);
+    const { title, category, date } = frontmatter;
     return (
       <Layout contents={
         <>
-        <Seo title={frontmatter.title} />
+        <Seo title={title} />
         <main>
             <div className="blog-post-container">
               <div className="blog-post">
-                <span>{frontmatter.date}</span>
-                <h1>{frontmatter.title}</h1>
+                <span>{date}</span>
+                <h1>{title}</h1>
                 <div
                   className="blog-post-content"
                   dangerouslySetInnerHTML={{ __html: html }} />
@@ -30,7 +31,8 @@ export default function Template({
         </main>
         </>
       }
-      searchbar={{useSearch, setUseSearch}}
+      searchbar={{ useSearch, setUseSearch }}
+      postData={{ title, category }}
       >
       </Layout>
 

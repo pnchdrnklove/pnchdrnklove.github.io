@@ -1,0 +1,30 @@
+.navigation {
+    display: none;
+}
+@media (min-width:600px) {
+    .navigation {
+        display: inline;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+.navigation a {
+    padding-left: 6px;
+    padding-right: 6px;
+    transition: all .2s ease-in-out;
+    border-radius: 3px;
+    text-decoration: none;
+    color: var(--color-primary);
+}
+.navigation a:hover {
+    background-color: rgba(55, 53, 47, 0.08);
+}
+.navigation a:last-child {
+    pointer-events: none;
+    color: #333;
+}
+.navigation a:last-child:hover {
+    cursor: default;
+    background-color: transparent;
+}

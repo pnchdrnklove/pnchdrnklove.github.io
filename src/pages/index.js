@@ -19,6 +19,7 @@ const IndexPage = ({
 }) => {
     const [query, setQuery] = useState('');
     const [useSearch, setUseSearch] = useState(true);
+    
     const posts = query ? nodes.filter(post => {
         const {excerpt} = post;
         const {title, category} = post.frontmatter;

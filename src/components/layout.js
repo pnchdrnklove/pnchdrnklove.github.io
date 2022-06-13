@@ -7,7 +7,7 @@ import Header from "./header"
 // import "bootstrap/dist/css/bootstrap.css"
 import "../css/layout.css"
 
-const Layout = ({ contents, searchbar }) => {
+const Layout = ({ contents, searchbar, postData }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -18,10 +18,12 @@ const Layout = ({ contents, searchbar }) => {
     }
   `
   )
+  console.log(postData);
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title}
-          searchbar={searchbar}/>
+          searchbar={searchbar}
+          postData={postData}/>
       { contents }
       <div className="container myfooter">
         <footer className="container-fluid py-3 my-4">
