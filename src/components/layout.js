@@ -7,7 +7,7 @@ import Header from "./header"
 // import "bootstrap/dist/css/bootstrap.css"
 import "../css/layout.css"
 
-const Layout = ({ about, contents, searchbar }) => {
+const Layout = ({ contents, searchbar }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -22,10 +22,7 @@ const Layout = ({ about, contents, searchbar }) => {
     <>
       <Header siteTitle={data.site.siteMetadata?.title}
           searchbar={searchbar}/>
-      <main>
-        {about}
-        {contents}
-      </main>
+      { contents }
       <div className="container myfooter">
         <footer className="container-fluid py-3 my-4">
           <span className="mb-3 mb-md-0 text-muted">

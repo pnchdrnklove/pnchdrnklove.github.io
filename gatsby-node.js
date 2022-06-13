@@ -36,6 +36,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       // as a GraphQL variable to query for data from the markdown file.
       context: {
         pagePath: path,
+        category: node.frontmatter.category,
       },
     })
   })

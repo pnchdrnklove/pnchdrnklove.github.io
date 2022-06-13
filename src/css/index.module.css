@@ -35,7 +35,8 @@
 
 .listItemLink {
   color: var(--color-primary);
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-weight: var(--font-weight-500);
 }
 
 .listItemDescription {

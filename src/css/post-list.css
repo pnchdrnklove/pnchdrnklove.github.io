@@ -24,8 +24,7 @@
 #post-list .image-wrapper {
     display: flex;
     justify-content: center;
-    /* padding: 15px 0; */
-    overflow: hidden;
+    padding: 15px 0;
     background-color: #fff;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
@@ -33,7 +32,7 @@
 }
 @media(min-width:600px) {
     #post-list .image-wrapper {
-        /* padding: 0 15px; */
+        padding: 0 15px;
         border-top-left-radius: 1rem;
         border-top-right-radius: 0;
         border-bottom-left-radius: 1rem;
@@ -42,7 +41,7 @@
     }
 }
 #post-list .image-wrapper > div {
-    margin: 0 15px;
+    /* margin: 0 15px; */
 }
 #post-list .text-wrapper {
     display: flex;
@@ -69,14 +68,16 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     
-    font-weight: 300;
+    /* font-weight: 300; */
+    font-weight: var(--font-weight-300);
     font-size: 16px;
     /* color: var(--color-excerpt); */
 }
 #post-list .post-list-date {
     margin-bottom: 0.5em;
-    font-weight: 300;
+    /* font-weight: 300; */
+    font-weight: var(--font-weight-300);
     font-size: 14px;
-    color: var(----color-excerpt);
+    /* color: var(----color-excerpt); */
 }
 /*  */

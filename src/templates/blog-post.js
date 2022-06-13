@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -15,17 +15,19 @@ export default function Template({
       <Layout contents={
         <>
         <Seo title={frontmatter.title} />
-        <div className="blog-post-container">
-          <div className="blog-post">
-            <span>{frontmatter.date}</span>
-            <h1>{frontmatter.title}</h1>
-            <div
-              className="blog-post-content"
-              dangerouslySetInnerHTML={{ __html: html }} />
+        <main>
+            <div className="blog-post-container">
+              <div className="blog-post">
+                <span>{frontmatter.date}</span>
+                <h1>{frontmatter.title}</h1>
+                <div
+                  className="blog-post-content"
+                  dangerouslySetInnerHTML={{ __html: html }} />
+              </div>
             </div>
-          </div>
-          <div className="other-posts">
-          </div> 
+            <div className="other-posts">
+            </div>
+        </main>
         </>
       }
       searchbar={{useSearch, setUseSearch}}

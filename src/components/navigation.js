@@ -6,8 +6,8 @@ const Navigation = () => {
           window.location.pathname.split('/').filter(Boolean) : '';
     const pathLink = splittedPath.map((e, i) => {
         return <React.Fragment key={'path-link-'+i}>
-            <span>{e}</span>
-            { i == splittedPath.length - 1 ? '' : <span className="seperator">/</span> }
+            <a href="#" className="path"><span>{e}</span></a>
+            { i === splittedPath.length - 1 ? '' : <span className="seperator">/</span> }
         </React.Fragment>
     })
     return <>

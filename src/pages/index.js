@@ -7,10 +7,9 @@ import Layout from "../components/layout"
 import PostLink from "../components/post-list"
 import About from "../components/about"
 
-import * as styles from "../css/index.module.css"
+// import * as styles from "../css/index.module.css"
 import "../css/about.css"
 
-// const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 const IndexPage = ({
     data: {
         allMarkdownRemark: {
@@ -20,8 +19,6 @@ const IndexPage = ({
 }) => {
     const [query, setQuery] = useState('');
     const [useSearch, setUseSearch] = useState(true);
-    const [viewPost, setViewPost] = useState('all');
-    
     const posts = query ? nodes.filter(post => {
         const {excerpt} = post;
         const {title, category} = post.frontmatter;
@@ -32,12 +29,14 @@ const IndexPage = ({
     }) : nodes;
     const postProp = posts.map(post => 
         <PostLink key={post.frontmatter.path} post={post} />)
-
-    return <>
-        <Layout searchbar={{ useSearch, setUseSearch, query, setQuery }}
-                about={<About/>}
-                contents={postProp}
-        />
+    
+    return <><Layout searchbar={{ useSearch, setUseSearch, query, setQuery }}
+                contents={
+                    <main>
+                        <About />
+                        {postProp}
+                    </main>
+                }/>
     </>
 };
 export default IndexPage

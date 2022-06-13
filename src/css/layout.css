@@ -1,12 +1,10 @@
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
-
 :root {
     --border-radius: 4px;
     --color-text: #333;
     --color-primary: #ff9933;
     --color-code-bg: #fff4db;
     --color-code: #8a6534;
-    --font-sans: "Spoqa Han Sans Neo", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    --font-sans: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
@@ -14,6 +12,12 @@
     --font-md: 16px;
     --font-sm: 14px;
     --font-sx: 12px;
+    --font-weight-100: 100;
+    --font-weight-200: 300;
+    --font-weight-300: 400;
+    --font-weight-400: 500;
+    --font-weight-500: 700;
+    
     --line-height-loose: 1.75;
     --line-height-normal: 1.5;
     --line-height-dense: 1.1;
@@ -51,14 +55,16 @@ body {
   color: var(--color-text);
   font-family: "Spoqa Han Sans Neo";
   font-family: var(--font-sans);
-  font-weight: normal;
+  /* font-weight: normal; */
+  font-weight: var(--font-weight-200);
   margin: 0;
   word-wrap: break-word;
 }
 a {
   background-color: transparent;
   color: var(--color-text);
-  font-weight: 500;
+  /* font-weight: 500; */
+  font-weight: var(--font-weight-400);
   text-decoration: underline;
   transition: 0.3s;
 }
@@ -75,8 +81,9 @@ abbr[title] {
 }
 b,
 strong {
-  font-weight: inherit;
-  font-weight: bolder;
+  /* font-weight: inherit; */
+  /* font-weight: bolder; */
+  font-weight: var(--font-weight-500);
 }
 dfn {
   font-style: italic;
@@ -161,7 +168,8 @@ b,
 strong,
 dt,
 th {
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-weight: var(--font-weight-500);
 }
 li {
   margin-bottom: calc(var(--space-4) / 2);

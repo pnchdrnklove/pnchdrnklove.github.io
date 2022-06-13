@@ -8,10 +8,10 @@ import Search from "./search"
 import "../css/header.css"
 
 const Header = ({ siteTitle, searchbar }) => {
-    const removeSearchValue = (e) => {
+    const removeSearchValue = e => {
         e.nativeEvent.stopImmediatePropagation();
-        if (searchbar.useSearch) {
-            searchbar.setQuery('');
+        if (searchbar.useSearch) { 
+            searchbar.setQuery(''); 
         }
     }
     
