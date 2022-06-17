@@ -1,13 +1,13 @@
-import * as React from "react"
-import {useState} from "react"
+import React from "react"
 
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
-import PostLink from "../components/post-list"
 import About from "../components/about"
+import PostLink from "../components/postlink"
 
 // import * as styles from "../css/index.module.css"
+import "../css/index.css"
 import "../css/about.css"
 
 const IndexPage = ({
@@ -17,8 +17,8 @@ const IndexPage = ({
         }
     },
 }) => {
-    const [query, setQuery] = useState('');
-    const [useSearch, setUseSearch] = useState(true);
+    const [query, setQuery] = React.useState('');
+    const [useSearch, setUseSearch] = React.useState(true);
     
     const posts = query ? nodes.filter(post => {
         const {excerpt} = post;
@@ -30,15 +30,18 @@ const IndexPage = ({
     }) : nodes;
     const postProp = posts.map(post => 
         <PostLink key={post.frontmatter.path} post={post} />)
-    
-    return <><Layout searchbar={{ useSearch, setUseSearch, query, setQuery }}
+    return <Layout searchbar={{ useSearch, setUseSearch, query, setQuery }}
                 contents={
                     <main>
                         <About />
+                        <div className="toggle-box">
+                            <Link to="/" className="current-view">All</Link>
+                            <Link to="/category">Category</Link>
+                        </div>
                         {postProp}
                     </main>
-                }/>
-    </>
+                }
+            />
 };
 export default IndexPage
 
@@ -46,7 +49,6 @@ export const pageQuery = graphql`
     query {
         allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date]}) {
             nodes {
-                id
                 excerpt(truncate: true, pruneLength: 120)
                 frontmatter {
                     category
@@ -54,7 +56,6 @@ export const pageQuery = graphql`
                     path
                     title
                 }
-                rawMarkdownBody
             }
         }
     }

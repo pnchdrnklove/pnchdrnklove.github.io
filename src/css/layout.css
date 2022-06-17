@@ -56,9 +56,10 @@ body {
   font-family: "Spoqa Han Sans Neo";
   font-family: var(--font-sans);
   /* font-weight: normal; */
-  font-weight: var(--font-weight-200);
+  font-weight: var(--font-weight-300);
   margin: 0;
   word-wrap: break-word;
+  text-shadow: 0 0 0.1px rgb(0 0 0 / 30%);
 }
 a {
   background-color: transparent;
@@ -92,8 +93,9 @@ h1 {
   margin: 0;
   margin-bottom: 3rem;
   padding: 0;
-  /* font-size: 1.8em; */
+  font-size: 2.15em;
   line-height: var(--line-height-dense);
+  font-weight: var(--font-weight-500);
   /* letter-spacing: -0.01em; */
 }
 h1 > b {
@@ -244,6 +246,15 @@ pre tt:after {
 }
 
 /* custom css */
+
+::selection {
+    color: #fff;
+    background-color: var(--color-primary);
+}
+::-moz-selection {
+    color: #fff;
+    background-color: var(--color-primary);
+}
 
 /* main */
 main {

@@ -1,0 +1,17 @@
+.toggle-box {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: calc(var(--space-4) - 1px);
+}
+.toggle-box a {
+    display: flex;
+    justify-content: center;
+    width: 8rem;
+    font-size: 1.325rem;
+    font-weight: var(--font-weight-300);
+    text-decoration: none;
+}
+.current-view {
+    color: var(--color-primary);
+    border-bottom: 3px solid var(--color-primary);
+}

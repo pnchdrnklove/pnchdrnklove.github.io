@@ -5,6 +5,7 @@ description: "gatsby-plugin-image 사용하기"
 template: "post"
 path: "/posts/gatsby/gatsby-image-error-unexpected-character"
 category: "gatsby"
+thumbnail_image: "../../images/gatsby-icon.png"
 ---
 
 ## 에러 로그

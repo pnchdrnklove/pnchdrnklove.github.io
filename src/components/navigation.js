@@ -1,10 +1,11 @@
-import React from 'react'
+import React from "react"
+import { Link } from "gatsby"
 import "../css/navigation.css"
 
-const Navigation = ({ postData }) => {
-    // const splittedPath = 
-    //       typeof window !== 'undefined' ? 
-    //       window.location.pathname.split('/').filter(Boolean) : '';
+const Navigation = ({ navData }) => {
+    const splittedPath = 
+          typeof window !== 'undefined' ? 
+          window.location.pathname.split('/').filter(Boolean) : '';
     // delete splittedPath[0];
     // const pathLink = splittedPath.map((e, i) => {
     //     return <React.Fragment key={'path-link-' + i}>
@@ -17,14 +18,24 @@ const Navigation = ({ postData }) => {
     //             </> }
     //     </React.Fragment>
     // })
-    const pathLink = postData ? <>
-        <a href="#" className="path"><span>{postData.category}</span></a>
+    const pathLink = navData ? <>
+        <Link to={`/category/${navData.category}`} className="path">
+            <span>{navData.category}</span>
+        </Link>
         <span className="seperator">&gt;</span>
-        <a href="#" className="path"><span>{postData.title}</span></a>
-    </> : ''
-    return <>
-        <div className="navigation">{pathLink}</div>
-    </>
+        <Link to="#" className="path">
+            <span>{navData.title}</span>
+        </Link>
+        </> :
+        <>{splittedPath.map(path => 
+            <><Link to={`/${path}`} key={`/${path}`} className="path">
+                <span>{path}</span>
+              </Link>
+              <span className="seperator">&gt;</span>
+            </>
+        )}
+        </>
+    return <div className="navigation">{pathLink}</div>
 }
 
 export default Navigation

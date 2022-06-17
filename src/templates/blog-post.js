@@ -32,7 +32,7 @@ export default function Template({
         </>
       }
       searchbar={{ useSearch, setUseSearch }}
-      postData={{ title, category }}
+      navData={{ title, category }}
       >
       </Layout>
 

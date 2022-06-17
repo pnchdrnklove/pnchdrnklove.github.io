@@ -1,10 +1,11 @@
 ---
-date: "2022-05-21"
-title: "테스트용 게시글입니다."
-description: "게시글에 대한 설명입니다."
+date: "2022-06-15"
+title: "Fragment란?"
+description: "React.Fragment에 대한 포스팅"
 template: "post"
-path: "/posts/test-post"
-category: "1"
+path: "/posts/react/what-is-fragment"
+category: "react"
+thumbnail_image: "../../images/react-icon.png"
 ---
 
 ## 게시글
@@ -28,7 +29,6 @@ category: "1"
 게시글 내용은 여기에 작성합니다
 
 게시글 내용은 여기에 작성합니다
-
 게시글 내용은 여기에 작성합니다
 
 게시글 내용은 여기에 작성합니다

@@ -1,14 +1,17 @@
 import React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import "../css/post-list.css"
+import "../css/postlink.css"
 
-const PostLink = ({ post }) => (
+const PostLink = ({ post }) => {
+    const postImage = `../images/${post.frontmatter.category}-icon.png`
+    console.log(postImage)
+    return <>
     <div id="post-list">
         <Link to={ post.frontmatter.path } className="post-list-wrapper">
             <div className="image-wrapper">
                 <StaticImage
-                    src={"../images/gatsby-icon.png"}
+                    src={postImage}
                     alt={``}
                     width={80}
                     placeholder="blurred"
@@ -28,7 +31,7 @@ const PostLink = ({ post }) => (
                 </p>
             </div>
         </Link>
-    </div>
-)
+    </div></>
+}
 
 export default PostLink

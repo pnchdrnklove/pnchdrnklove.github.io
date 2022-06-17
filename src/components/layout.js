@@ -4,10 +4,9 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 
-// import "bootstrap/dist/css/bootstrap.css"
 import "../css/layout.css"
 
-const Layout = ({ contents, searchbar, postData }) => {
+const Layout = ({ contents, searchbar, navData }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -18,12 +17,11 @@ const Layout = ({ contents, searchbar, postData }) => {
     }
   `
   )
-  console.log(postData);
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title}
           searchbar={searchbar}
-          postData={postData}/>
+          navData={navData}/>
       { contents }
       <div className="container myfooter">
         <footer className="container-fluid py-3 my-4">

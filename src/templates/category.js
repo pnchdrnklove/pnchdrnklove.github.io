@@ -1,14 +1,17 @@
 import React from "react"
-import PropTypes from "prop-types"
 
 // Components
 import { Link, graphql } from "gatsby"
 
+import Layout from "../components/layout"
+
 const categories = ({ pageContext, data }) => {
   const { category } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
-  const categoryHeader = `${totalCount} post(s) of category "${category}"`
+  const categoryHeader = `${totalCount} post(s) in category "${category}"`
   return (
+    <Layout contents={
+    <main>
     <div>
       <h1>{categoryHeader}</h1>
       <ul>
@@ -21,35 +24,10 @@ const categories = ({ pageContext, data }) => {
           )
         })}
       </ul>
-      {/*
-              This links to a page that does not yet exist.
-              You'll come back to it!
-            */}
       <Link to="/category">All categories</Link>
     </div>
+    </main>}/>
   )
-}
-categories.propTypes = {
-  pageContext: PropTypes.shape({
-    category: PropTypes.string.isRequired,
-  }),
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      totalCount: PropTypes.number.isRequired,
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            frontmatter: PropTypes.shape({
-              title: PropTypes.string.isRequired,
-            }),
-            fields: PropTypes.shape({
-              path: PropTypes.string.isRequired,
-            }),
-          }),
-        }).isRequired
-      ),
-    }),
-  }),
 }
 export default categories
 export const pageQuery = graphql`

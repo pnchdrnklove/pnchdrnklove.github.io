@@ -7,11 +7,11 @@ import Search from "./search"
 
 import "../css/header.css"
 
-const Header = ({ siteTitle, searchbar, postData }) => {
+const Header = ({ siteTitle, searchbar, navData }) => {
     const removeSearchValue = e => {
         e.nativeEvent.stopImmediatePropagation();
-        if (searchbar.useSearch) { 
-            searchbar.setQuery(''); 
+        if (searchbar?.useSearch) { 
+            searchbar.setQuery('');
         }
     }
     
@@ -22,7 +22,7 @@ const Header = ({ siteTitle, searchbar, postData }) => {
                 {siteTitle}
               </Link>
               <span className="seperator">&gt;</span>
-              <Navigation postData={postData}/>
+              <Navigation navData={navData}/>
               <Search searchbar={searchbar}></Search>
             </nav>
         </header>

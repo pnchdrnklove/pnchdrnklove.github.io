@@ -5,6 +5,7 @@ description: "게시글에 대한 설명입니다."
 template: "post"
 path: "/posts/test_5"
 category: "2"
+thumbnail_image: "../../images/alien-monster.webp"
 ---
 
 ## 게시글
