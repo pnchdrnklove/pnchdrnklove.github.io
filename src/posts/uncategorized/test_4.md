@@ -3,9 +3,9 @@ date: "2022-05-26"
 title: "special 테스트용 게시글입니다4."
 description: "게시글에 대한 설명입니다."
 template: "post"
-path: "/posts/test_4"
-category: "2"
-thumbnail_image: "../../images/alien-monster.webp"
+path: "/posts/uncategorized/test_4"
+category: "uncategorized"
+thumbnailImage: ../../images/alien-monster.webp
 ---
 
 ## 게시글

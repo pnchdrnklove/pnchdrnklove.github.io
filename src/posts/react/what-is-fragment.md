@@ -5,7 +5,7 @@ description: "React.Fragment에 대한 포스팅"
 template: "post"
 path: "/posts/react/what-is-fragment"
 category: "react"
-thumbnail_image: "../../images/react-icon.png"
+thumbnailImage: ../../images/react-icon.png
 ---
 
 ## 게시글

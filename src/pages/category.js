@@ -5,7 +5,6 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import About from "../components/about"
-import Navigation from "../components/navigation"
 
 import "../css/category.css"
 

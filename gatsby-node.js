@@ -1,5 +1,19 @@
 const { create } = require("domain")
 const path = require("path")
+
+exports.createSchemaCustomization = ({ actions }) => {
+    const { createTypes } = actions;
+    const typeDefs = `
+        type MarkdownRemark implements Node {
+            frontmatter: Frontmatter
+        }
+        type Frontmatter {
+            thumbnailImage: [File]
+        }
+    `;
+    createTypes(typeDefs);
+};
+
 // Implement the Gatsby API “createPages”. This is called once the
 // data layer is bootstrapped to let plugins create pages from data.
 exports.createPages = async ({ graphql, actions, reporter }) => {

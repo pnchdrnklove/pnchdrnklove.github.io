@@ -6,7 +6,7 @@ const About = () => {
     return <><Seo title="Home" />
         <div className="about-wrapper">
             <StaticImage className="profile-image"
-                            src={"../images/profile.PNG"}
+                            src="../images/profile.png"
                             alt=""
                             width={128}
                             height={128}
