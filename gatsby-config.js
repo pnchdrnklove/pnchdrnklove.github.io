@@ -14,15 +14,11 @@ module.exports = {
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+      options: { name: `markdown-pages`, path: `${__dirname}/src/posts` }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/src/posts`,
-      },      
+      options: { name: `images`, path: `${__dirname}/src/images` }
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,

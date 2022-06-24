@@ -14,3 +14,4 @@ thumbnailImage: ../../images/gatsby-icon.png
 
 
 https://stackoverflow.com/questions/59272562/how-to-source-images-from-a-yaml-array-in-gatsby-js
+https://jeonghwan-kim.github.io/dev/2020/08/19/gatsby-image.html

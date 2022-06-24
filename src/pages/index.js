@@ -55,6 +55,11 @@ export const pageQuery = graphql`
                     date(formatString: "YYYY-MM-DD")
                     path
                     title
+                    thumbnailImage {
+                        childImageSharp {
+                            gatsbyImageData(width: 80 height: 80 transformOptions: {fit: CONTAIN})
+                        }
+                    }
                 }
             }
         }

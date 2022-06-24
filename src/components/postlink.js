@@ -1,15 +1,16 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import "../css/postlink.css"
 
 const PostLink = ({ post }) => {
+    const image = getImage(post.frontmatter.thumbnailImage)
     return <>
     <div id="post-list">
         <Link to={ post.frontmatter.path } className="post-list-wrapper">
             <div className="image-wrapper">
-                <GatsbyImage src={post.frontmatter.image} alt={post.frontmatter.category}/>
+                <GatsbyImage image={image} alt={post.frontmatter.category}/>
             </div>
             <div className="text-wrapper">
                 <span className="post-list-date">
