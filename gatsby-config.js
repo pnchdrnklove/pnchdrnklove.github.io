@@ -21,7 +21,19 @@ module.exports = {
       options: { name: `images`, path: `${__dirname}/src/images` }
     },
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            }
+          },
+        ],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sitemap`,
     {
