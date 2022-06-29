@@ -7,3 +7,9 @@
     justify-content: space-between;
 }
 /* */
+
+/* inside post */
+.gatsby-resp-image-image {
+    border: 1px solid gray;
+}
+/* */
