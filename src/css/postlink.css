@@ -24,6 +24,7 @@
 #post-list .image-wrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 15px 0;
     background-color: #fff;
     border-top-left-radius: 1rem;
@@ -40,8 +41,9 @@
         border-right: 1px solid var(--color-border);
     }
 }
-#post-list .image-wrapper > div {
-    /* margin: 0 15px; */
+#post-list .image-wrapper img {
+    width: 80px;
+    height: 80px;
 }
 #post-list .text-wrapper {
     display: flex;

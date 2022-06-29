@@ -57,7 +57,7 @@ export const pageQuery = graphql`
                     title
                     thumbnailImage {
                         childImageSharp {
-                            gatsbyImageData(width: 80 height: 80 transformOptions: {fit: CONTAIN})
+                            gatsbyImageData
                         }
                     }
                 }
