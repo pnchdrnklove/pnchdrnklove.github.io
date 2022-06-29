@@ -118,6 +118,16 @@ import profile from '...경로'
     width={80}
     />
 ```
+
+`StaticImage`나 `GatsbyImage`를 사용하여 이미지를 표현할 때 여러 옵션을 추가할 수 있는데, 모든 옵션은 [이 문서](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-plugin-image/)에서 확인할 수 있다.
+
+이번에 `StaticImage`를 사용할 때는 이미지를 로딩할 때의 임시 이미지 표현 방식(`placeholder`)과 이미지 너비(`width`)만 지정해주고, 나머지 스타일링은 `css`로 표현했다.
+
+</br>
+
+![완성된 프로필란](../../images/gatsby-image-error-unexpected-character-01.PNG)
+_<sub><center style="color: gray">완성된 프로필란</center></sub>_
+
 </br>
 
 ## 정리
