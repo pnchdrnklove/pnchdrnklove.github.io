@@ -14,7 +14,7 @@ const PostLink = ({ post }) => {
             </div>
             <div className="text-wrapper">
                 <span className="post-list-date">
-                    { post.frontmatter.category }
+                    { post.frontmatter.category } &middot;
                     { post.frontmatter.date }
                 </span>
                 <h3 className="post-list-title">
