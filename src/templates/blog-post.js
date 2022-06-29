@@ -7,7 +7,6 @@ import "../css/blog-post.css"
 
 export default function Template({ 
     data, // this prop will be injected by the GraphQL query below.
-    pageContext,
 }) {
     const { frontmatter, html } = data.markdownRemark;
     const [useSearch, setUseSearch] = useState(false);
