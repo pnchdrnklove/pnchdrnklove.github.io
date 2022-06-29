@@ -6,6 +6,7 @@ template: "post"
 path: "/posts/gatsby/gatsby-image-error-unexpected-character"
 category: "gatsby"
 thumbnailImage: ../../images/gatsby-icon.png
+draft: false
 ---
 
 ## 에러 로그
@@ -123,9 +124,7 @@ import profile from '...경로'
 
 이번에 `StaticImage`를 사용할 때는 이미지를 로딩할 때의 임시 이미지 표현 방식(`placeholder`)과 이미지 너비(`width`)만 지정해주고, 나머지 스타일링은 `css`로 표현했다.
 
-</br>
-
-![완성된 프로필란](../../images/gatsby-image-error-unexpected-character-01.PNG)
+![완성된 프로필란](../../images/gatsby-image-error-unexpected-character-01.png)
 _<sub><center style="color: gray">완성된 프로필란</center></sub>_
 
 </br>

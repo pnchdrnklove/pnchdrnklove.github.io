@@ -6,6 +6,7 @@ template: "post"
 path: "/posts/react/what-is-fragment"
 category: "react"
 thumbnailImage: ../../images/react-icon.png
+draft: true
 ---
 
 ## 게시글
