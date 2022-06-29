@@ -3,21 +3,22 @@ import { Link } from "gatsby"
 import "../css/navigation.css"
 
 const Navigation = ({ navData }) => {
-    const splittedPath = 
-          typeof window !== 'undefined' ? 
-          window.location.pathname.split('/').filter(Boolean) : '';
-    // delete splittedPath[0];
-    // const pathLink = splittedPath.map((e, i) => {
-    //     return <React.Fragment key={'path-link-' + i}>
-           
-    //         { i === splittedPath.length - 1 ? 
-    //             <a href="#" className="path"><span>{postData.title}</span></a> : 
-    //             <> 
-    //                 <a href="#" className="path"><span>{e}</span></a>
-    //                 <span className="seperator">&gt;</span>
-    //             </> }
-    //     </React.Fragment>
-    // })
+    const windowPath = 
+        typeof window !== 'undefined' ? 
+        window.location.pathname.split('/').filter(Boolean) : '';
+    
+    const categoryPath = () => { if (Array.isArray(windowPath)) {
+        return windowPath.map(path => {
+            return <>
+                <Link to={`${path === 'category' ? `/${path}` : `/category/${path}`}`}
+                    key={`/${path}`} className="path">
+                    <span>{path}</span>
+                </Link>
+                <span className="seperator">&gt;</span>
+            </>
+        })
+    }}
+
     const pathLink = navData ? <>
         <Link to={`/category/${navData.category}`} className="path">
             <span>{navData.category}</span>
@@ -27,14 +28,7 @@ const Navigation = ({ navData }) => {
             <span>{navData.title}</span>
         </Link>
         </> :
-        <>{splittedPath.map(path => 
-            <><Link to={`/${path}`} key={`/${path}`} className="path">
-                <span>{path}</span>
-              </Link>
-              <span className="seperator">&gt;</span>
-            </>
-        )}
-        </>
+        <>{categoryPath()}</>
     return <div className="navigation">{pathLink}</div>
 }
 
