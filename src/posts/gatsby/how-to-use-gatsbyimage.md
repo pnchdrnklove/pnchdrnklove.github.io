@@ -14,7 +14,7 @@ draft: false
 
 [gatsby-plugin-image](https://www.gatsbyjs.com/plugins/gatsby-plugin-image/?=gatsby-plugin-image)를 이용해서 `Gatsby`에서 이미지를 생성하고, 조작할 수 있다.
 
-[이전 포스팅](pnchdrnklove.github.io/posts/gatsby/gatsby-image-error-unexpected-character)에서도 소개했듯이, 추가하려는 이미지가 정적이냐, 동적이냐에 따라 `<StaticImage>` 또는 `<GatsbyImage>` 컴포넌트를 선택한다.
+[이전 포스팅](./gatsby-image-error-unexpected-character)에서도 소개했듯이, 추가하려는 이미지가 정적이냐, 동적이냐에 따라 `<StaticImage>` 또는 `<GatsbyImage>` 컴포넌트를 선택한다.
 
 `<GatsbyImage>` 컴포넌트를 사용하면, `Gatsby`에서 Dynamic Image를 다룰 수 있다.
 

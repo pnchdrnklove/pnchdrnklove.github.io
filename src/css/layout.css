@@ -43,7 +43,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
-  font: "Spoqa Han Sans Neo";
+  font: var(--font-sans);
   font-size: 1.125rem;
   line-height: var(--line-height-normal);
   letter-spacing: -0.0625em;
@@ -53,7 +53,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: var(--color-text);
-  font-family: "Spoqa Han Sans Neo";
+  font-family: var(--font-sans);
   font-family: var(--font-sans);
   /* font-weight: normal; */
   font-weight: var(--font-weight-300);
