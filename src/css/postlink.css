@@ -16,7 +16,7 @@
 #post-list .post-list-wrapper:hover .image-wrapper img {
     transform: scale(1.05);
 }
-@media(min-width:600px) {
+@media(min-width:768px) {
     #post-list .post-list-wrapper {
         flex-direction: row;
     }
@@ -31,7 +31,7 @@
     border-top-right-radius: 1rem;
     border-bottom: 1px solid var(--color-border);
 }
-@media(min-width:600px) {
+@media(min-width:768px) {
     #post-list .image-wrapper {
         padding: 0 15px;
         border-top-left-radius: 1rem;
@@ -51,7 +51,7 @@
     padding: 24px;
     overflow: hidden;
 }
-@media(min-width:600px) {
+@media(min-width:768px) {
     #post-list .text-wrapper {
         width: 80%;
     }

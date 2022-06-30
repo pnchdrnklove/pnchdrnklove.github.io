@@ -9,7 +9,7 @@ nav.mynavbar {
     font-weight: var(--font-weight-400);
     letter-spacing: -0.0625em;
 }
-@media (min-width:600px) {
+@media (min-width:768px) {
     nav.mynavbar {
         max-width: var(--size-content);
     }
@@ -37,7 +37,7 @@ nav.mynavbar {
         transition: 0.3s;
     }
 }
-@media (min-width:600px) {
+@media (min-width:768px) {
     #header-search {
         width: 300px;
     }    

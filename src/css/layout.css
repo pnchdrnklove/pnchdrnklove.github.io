@@ -4,8 +4,10 @@
     --border-radius: 4px;
     --color-text: #333;
     --color-primary: #ff9933;
-    --color-code-bg: #fff4db;
-    --color-code: #8a6534;
+    /* --color-code-bg: #fff4db; */
+    --color-code-bg: rgba(55, 53, 47, 0.08);
+    /* --color-code: #8a6534; */
+    --color-code: var(--color-primary);
     --font-sans: "AppleSDGothicNeo", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
@@ -36,9 +38,9 @@
     --color-excerpt: #949494;
     --color-border: rgba(0, 0, 0, 0.2);
 }
-@media (min-width:600px) {
+@media (min-width:768px) {
     :root {
-        --size-content: 600px;
+        --size-content: 768px;
     }
 }
 html {
@@ -199,7 +201,7 @@ li > p {
   margin-bottom: calc(var(--space-4) / 2);
 }
 p {
-  max-width: 680px;
+  max-width: 768px;
 }
 code {
   font-size: 0.875rem;
@@ -261,7 +263,7 @@ main {
     margin: 0 auto;
     padding: calc(var(--size-gutter)*2.5) 20px var(--size-gutter);
 }
-@media (min-width:600px) {
+@media (min-width:768px) {
     main {
         max-width: var(--size-content);
         padding-top: calc(var(--size-gutter)*3);
@@ -274,7 +276,7 @@ main {
     padding: 0 20px;
     font-size: var(--font-sm);
 }
-@media(min-width:600px) {
+@media(min-width:768px) {
     .myfooter {
         max-width: var(--size-content);
     }

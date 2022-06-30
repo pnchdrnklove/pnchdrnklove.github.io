@@ -7,7 +7,7 @@
         align-items: center;
     }  
 }
-@media (min-width:600px) {
+@media (min-width:768px) {
     .about-wrapper {
         margin-bottom: 0;
         flex-direction: row;
@@ -22,7 +22,7 @@
         box-shadow: 0 0 16px rgb(221, 221, 221);
     }
 }
-@media (min-width:600px) {
+@media (min-width:768px) {
     .profile-image {
         display: inline-block;
     }
