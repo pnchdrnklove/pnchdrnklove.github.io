@@ -3,12 +3,13 @@ import { graphql } from "gatsby";
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Toc from "../components/toc"
 import "../css/blog-post.css"
 
 export default function Template({ 
     data, // this prop will be injected by the GraphQL query below.
 }) {
-    const { frontmatter, html } = data.markdownRemark;
+    const { frontmatter, html, tableOfContents } = data.markdownRemark;
     const [useSearch, setUseSearch] = useState(false);
     const { title, category, date } = frontmatter;
     return (
@@ -24,6 +25,7 @@ export default function Template({
                   className="blog-post-content"
                   dangerouslySetInnerHTML={{ __html: html }} />
               </div>
+              <Toc list={tableOfContents} />
             </div>
             <div className="other-posts">
             </div>
@@ -42,6 +44,7 @@ export const pageQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: {path: {eq: $path}}) {
       html
+      tableOfContents
       frontmatter {
         category
         date(formatString: "YYYY-MM-DD")
