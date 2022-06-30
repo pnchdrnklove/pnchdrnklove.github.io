@@ -1,10 +1,12 @@
+@import "./typography.css";
+
 :root {
     --border-radius: 4px;
     --color-text: #333;
     --color-primary: #ff9933;
     --color-code-bg: #fff4db;
     --color-code: #8a6534;
-    --font-sans: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    --font-sans: "AppleSDGothicNeo", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
@@ -12,7 +14,6 @@
     --font-md: 16px;
     --font-sm: 14px;
     --font-sx: 12px;
-    --font-weight-100: 100;
     --font-weight-200: 300;
     --font-weight-300: 400;
     --font-weight-400: 500;
@@ -53,7 +54,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: var(--color-text);
-  font-family: var(--font-sans);
   font-family: var(--font-sans);
   /* font-weight: normal; */
   font-weight: var(--font-weight-300);

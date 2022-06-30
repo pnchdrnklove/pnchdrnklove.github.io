@@ -50,15 +50,6 @@ module.exports = {
         icon: `src/images/alien-monster.webp`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `Noto+Sans+KR\:100,300,400,500,600,700,900`
-        ],
-        display: `swap`,
-      }
-    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
