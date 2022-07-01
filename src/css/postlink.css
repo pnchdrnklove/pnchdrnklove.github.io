@@ -33,7 +33,7 @@
 }
 @media(min-width:768px) {
     #post-list .image-wrapper {
-        padding: 0 15px;
+        width: 111px;
         border-top-left-radius: 1rem;
         border-top-right-radius: 0;
         border-bottom-left-radius: 1rem;
@@ -48,12 +48,12 @@
 #post-list .text-wrapper {
     display: flex;
     flex-direction: column;
-    padding: 24px;
+    padding: 20px;
     overflow: hidden;
 }
 @media(min-width:768px) {
     #post-list .text-wrapper {
-        width: 80%;
+        width: 85%;
     }
 }
 #post-list .post-list-title {

@@ -27,7 +27,7 @@ nav.mynavbar {
 }
 @media (min-width:0px) {
     #header-search {
-        width: 150px;
+        width: 200px;
         padding: 0 6px;
         border: none;
         outline: none;
