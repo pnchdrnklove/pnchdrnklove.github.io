@@ -10,7 +10,7 @@ const Navigation = ({ navData }) => {
     const categoryPath = () => { if (Array.isArray(windowPath)) {
         return windowPath.map(path => {
             return <>
-                <Link to={`${path === 'category' ? `/${path}` : `/category/${path}`}`}
+                <Link to={`${path === 'category' ? `/${path}` : `/category/#${path}`}`}
                     key={`/${path}`} className="path">
                     <span>{path}</span>
                 </Link>
@@ -20,7 +20,7 @@ const Navigation = ({ navData }) => {
     }}
 
     const pathLink = navData ? <>
-        <Link to={`/category/${navData.category}`} className="path">
+        <Link to={`/category/#${navData.category}`} className="path">
             <span>{navData.category}</span>
         </Link>
         <span className="seperator">&gt;</span>
