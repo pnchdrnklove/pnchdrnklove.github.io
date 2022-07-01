@@ -47,14 +47,4 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     })
   })
-  
-  result.data.allMarkdownRemark.group.forEach(category => {
-    createPage({
-      path: `/category/${category.fieldValue}/`,
-      component: categoryTemplate,
-      context: {
-        category: category.fieldValue,
-      },
-    })
-  })
 }
